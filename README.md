@@ -1,7 +1,4 @@
-1. ✅ README File
-•	A README.md file is present at the root level of the repository.
-•	It explains what the project is, how it works, and how to run it.
-2. 📘 Project Overview
+📘 Project Overview
 •	Team Name: LockNChat
 •	Problem Statement: Messaging App with Encrypted Chat — Develop a secure chat system where users can exchange end-to-end encrypted messages. Include secure user authentication, encryption key management, and message expiration.
 SecureChat is our solution to the above problem. It is a web-based messaging application that prioritizes user privacy, secure communication, and modern UI/UX practices. The app is developed using React for the frontend and Firebase for backend services like real-time messaging and authentication.
