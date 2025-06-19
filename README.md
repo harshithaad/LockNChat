@@ -1,7 +1,7 @@
 ## Project Overview
 •	Team Name: LockNChat
 •	Problem Statement: Messaging App with Encrypted Chat — Develop a secure chat system where users can exchange end-to-end encrypted messages. Include secure user authentication, encryption key management, and message expiration.
-SecureChat is our solution to the above problem. It is a web-based messaging application that prioritizes user privacy, secure communication, and modern UI/UX practices. The app is developed using React for the frontend and Firebase for backend services like real-time messaging and authentication.
+LockNChat is our solution to the above problem. It is a web-based messaging application that prioritizes user privacy, secure communication, and modern UI/UX practices. The app is developed using React for the frontend and Firebase for backend services like real-time messaging and authentication.
 Key Features:
 •	User Authentication: Only registered users can log in using Firebase Authentication. Password validation ensures strong credentials.
 •	End-to-End Encryption: Messages are encrypted on the sender’s side and decrypted only on the recipient’s side using AES encryption combined with Diffie-Hellman key exchange.
@@ -9,7 +9,7 @@ Key Features:
 •	Message Expiration (Planned Feature): While not yet active, the design supports implementing timed message expiration.
 •	Security Controls: CAPTCHA, login rate limiting, and input restrictions defend against spam, bots, and injection attacks.
 •	Minimalist Design: UI is clean and secure, with routing restricted to / for login/register and /chat for messaging.
-SecureChat ensures that users can communicate privately, securely, and in real-time. No sensitive information is stored or shared that could compromise data confidentiality.
+LockNChat ensures that users can communicate privately, securely, and in real-time. No sensitive information is stored or shared that could compromise data confidentiality.
 ________________________________________________________________________________
 ## Setup Instructions
 •	Clone the project:
@@ -60,7 +60,7 @@ o	Rate limiting and validation
 Comments do not reveal any keys or sensitive logic paths.
 ________________________________________________________________________________
 ## API Documentation
-SecureChat uses Firebase services; no custom backend APIs are implemented. It interacts with:
+LockNChat uses Firebase services; no custom backend APIs are implemented. It interacts with:
 •	Firebase Auth: For user registration and login
 •	Firebase Firestore: For encrypted message storage
 •	All encryption occurs on the client side; the server never sees plain text.
