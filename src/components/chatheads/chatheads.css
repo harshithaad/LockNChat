@@ -16,7 +16,7 @@
 }
 
 .chat-head-item:hover{
-    background-color: rgb(16, 123, 230);
+    background-color: rgb(16, 230, 102);;
 }
 
 .username{
@@ -35,7 +35,7 @@
 .user-profile-pic{
     width: 25px;
     height: 25px;
-    background-color: #ccc;
+    background-color: #61def7;
     display: flex;
     border-radius: 50%;
     justify-content: center;

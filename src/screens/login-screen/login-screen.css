@@ -41,6 +41,12 @@
 }
 
 .button:hover{
-    background-color: rgb(16, 123, 230);
+    background-color: rgb(16, 230, 91);
 }
 
+.captcha-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed */
+}

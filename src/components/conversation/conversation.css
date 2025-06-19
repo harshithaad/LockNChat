@@ -41,49 +41,56 @@
     white-space: nowrap;
 }
 
-.message-container{
-    display: flex;    
+.message-container {
+  display: flex;
+  margin: 6px 0;
 }
 
-.message-content{
-    font-size: 18px;
-    background-color: rgb(16, 123, 230);
-    margin: 0.5vh,0vh,0.5vh,0vh;
-    margin-top: 1vh;
-    border-bottom: 1px solid white;
-    padding: 0.5vh;
-    border-radius: 10px;
-    min-width: 8vh;
-    color: white;
+.message-content {
+  background-color: #2196f3;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 60%;       /* Prevent long messages from stretching full width */
+  word-wrap: break-word; /* Wrap long words */
 }
 
-.chatscreen{
-    width: 100%;
-    background-color: rgb(16, 123, 230);
-    color: white;
+.chatscreen {
+  display: flex;           /* Layout side-by-side */
+  width: 100%;
+  background-color: rgb(16, 123, 230);
+  color: white;
 }
 
-.chat{
-    width: 65%;
-    height: 90vh;
-    margin-top: auto;
-    float: left;
-    background-color:rgb(66, 65, 65);
-    overflow: auto;
+.chat {
+  width: 65%;
+  height: 90vh;
+  background-color: rgb(66, 65, 65);
+  display: flex;
+  flex-direction: column;
 }
+
+.encryption-elements {
+  width: 35%;               /* Use the remaining space */
+  background-color: #61def7;
+  color: white;
+  padding: 2vh;
+  height: 90vh;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
 
 .chat p{
     text-align: center;
     font-size: 18px;
 }
 
-.encryption-elements{
-    background-color: rgb(16, 123, 230);
-    color: white;
-    height: 90vh;
-    font-size: 18px;
-    overflow: auto;
-}
+
 
 form{
     margin-left: 2vw;
@@ -120,7 +127,27 @@ input{
     }
 }
 
+/* Align messages sent by the current user (right) */
+.message-container.self {
+  justify-content: flex-end;
+}
 
+/* Align messages received from others (left) */
+.message-container.other {
+  justify-content: flex-start;
+}
 
+/* Make sent messages blue and received white */
+.message-container.self .message-content {
+  background-color: #2196f3; /* blue bubble */
+  color: white;
+  border-top-right-radius: 0;
+  text-align: right;
+}
 
-
+.message-container.other .message-content {
+  background-color: #e5e5ea; /* iMessage-style gray bubble */
+  color: black;
+  border-top-left-radius: 0;
+  text-align: left;
+}

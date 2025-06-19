@@ -23,10 +23,10 @@ const logout = () => {  //Method to log out
         </div>
          ) : (
         <div className='navbar-content'>
-          <p>Login to use chat</p>
+          <p>Login to chat</p>
         </div>
          )}
-         <p className='appname'>SecureChat</p>
+         <p className='appname'>LockNChat</p>
          <p></p>
     </div>
     
