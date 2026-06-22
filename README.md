@@ -5,14 +5,9 @@ A real-time, end-to-end encrypted messaging app — built with React & Firebase
 </p>
 
 <p align="center">
-<img src="samples/Convo firebase.png" width="600"/>
-</p>
-
-<p align="center">
 Private conversations, secured client-side — the server never sees your plaintext.
 </p>
 
----
 
 ## 📘 Overview
 
@@ -49,7 +44,13 @@ Each message is encrypted on the sender’s device and decrypted only on the rec
 ## 📸 Screenshots
 
 <p align="center">
-<img src="samples/Convo firebase.png" alt="Encrypted conversation in Firebase" width="600"/>
+<p align="center">
+  <img src="samples/captcha.png" width="600"/>
+  <img src="samples/chatbox.png" width="600"/>
+  <img src="samples/Convo firebase.png" width="600"/>
+  <img src="samples/Firebase.png" width="600"/>
+  <img src="samples/login_.png" width="600"/>
+</p>
 </p>
 
 > Add more screenshots (login, chat UI, etc.) in the `samples/` folder.
