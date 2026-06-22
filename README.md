@@ -55,7 +55,6 @@ Each message is encrypted on the sender’s device and decrypted only on the rec
 <p align="center">
   <img src="samples/captcha.png" width="600"/>
   <img src="samples/chatbox.png" width="600"/>
-  <img src="samples/Firebase.png" width="600"/>
   <img src="samples/login_.png" width="600"/>
 </p>
 </p>
