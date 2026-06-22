@@ -40,6 +40,14 @@ Each message is encrypted on the sender’s device and decrypted only on the rec
   Clean interface with simple routing (`/` for auth, `/chat` for messaging).
 
 ---
+## 🔐 How Encryption Works
+
+1. Each user generates a private key
+2. Diffie-Hellman computes a shared secret (never transmitted)
+3. Messages are AES-encrypted using that secret
+4. Firestore stores only ciphertext
+5. Recipient decrypts locally
+6. ---
 
 ## 📸 Screenshots
 
@@ -53,7 +61,6 @@ Each message is encrypted on the sender’s device and decrypted only on the rec
 </p>
 </p>
 
-> Add more screenshots (login, chat UI, etc.) in the `samples/` folder.
 
 ---
 
@@ -125,41 +132,6 @@ Open http://localhost:3000
 * Go to `/chat` to send encrypted messages
 
 ---
-
-## 🔐 How Encryption Works
-
-1. Each user generates a private key
-2. Diffie-Hellman computes a shared secret (never transmitted)
-3. Messages are AES-encrypted using that secret
-4. Firestore stores only ciphertext
-5. Recipient decrypts locally
-
----
-
-## ⚠️ Limitations
-
-This is a **learning project**, not a production-grade secure messenger.
-
-* Key exchange is simplified
-* No message authentication (MAC/signatures)
-* No multi-device key sync
-* Metadata (timestamps, user IDs) is still visible to Firebase
-
----
-
-## 📂 Project Structure
-
-```
-LockNChat/
-├── public/
-├── src/
-│   ├── components/
-│   ├── screens/
-│   ├── firebase.js
-│   └── App.js
-├── samples/
-└── README.md
-```
 
 
 <p align="center">
