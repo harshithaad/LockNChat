@@ -13,6 +13,7 @@ const { notFound, errorHandler } = require('./middleware/errors');
 const healthRouter = require('./routes/health');
 const { createAuthRouter } = require('./routes/auth');
 const usersRouter = require('./routes/users');
+const conversationsRouter = require('./routes/conversations');
 
 function createApp() {
   const app = express();
@@ -33,6 +34,7 @@ function createApp() {
   api.use('/health', healthRouter);
   api.use('/auth', createAuthRouter());
   api.use('/users', usersRouter);
+  api.use('/conversations', conversationsRouter);
   api.use(notFound);
 
   app.use('/api', api);
