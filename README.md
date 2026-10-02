@@ -7,7 +7,7 @@ A real-time, end-to-end encrypted messaging app — built with React & Firebase
 <p align="center">
 Private conversations, secured client-side — the server never sees your plaintext.
 </p>
-
+> **🚧 v2 in progress:** LockNChat is being rebuilt with a Node.js/Express backend, Socket.io real-time messaging, JWT + bcrypt authentication, and proper end-to-end encryption (Web Crypto API). The original React + Firebase prototype is preserved under the [`v1-firebase`](../../tree/v1-firebase) tag.
 
 ## 📘 Overview
 
