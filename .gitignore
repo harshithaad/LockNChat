@@ -25,6 +25,3 @@ yarn-error.log*
 .vscode/
 .idea/
 
-# local tooling
-.claude/
-CLAUDE.md
