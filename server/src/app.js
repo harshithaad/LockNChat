@@ -11,6 +11,8 @@ const {
 } = require('./middleware/security');
 const { notFound, errorHandler } = require('./middleware/errors');
 const healthRouter = require('./routes/health');
+const { createAuthRouter } = require('./routes/auth');
+const usersRouter = require('./routes/users');
 
 function createApp() {
   const app = express();
@@ -29,6 +31,8 @@ function createApp() {
   api.use(cookieParser());
 
   api.use('/health', healthRouter);
+  api.use('/auth', createAuthRouter());
+  api.use('/users', usersRouter);
   api.use(notFound);
 
   app.use('/api', api);
