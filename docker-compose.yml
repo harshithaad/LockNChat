@@ -1,0 +1,24 @@
+# Local development database. Credentials here are for local use only.
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: locknchat
+      POSTGRES_PASSWORD: locknchat
+      POSTGRES_DB: locknchat
+    ports:
+      # Bound to loopback only so the database is never exposed on the network.
+      # Host port 5433 avoids clashing with a locally installed PostgreSQL.
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U locknchat -d locknchat"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
