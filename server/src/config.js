@@ -51,5 +51,5 @@ module.exports = Object.freeze({
   trustProxy: env.TRUST_PROXY,
   rateLimitAuthMax: env.RATE_LIMIT_AUTH_MAX,
   rateLimitApiMax: env.RATE_LIMIT_API_MAX,
-  clientDir: path.join(__dirname, '..', '..', 'client'),
+  clientDir: path.join(__dirname, '..', '..', 'client', 'public'),
 });

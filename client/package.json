@@ -1,0 +1,10 @@
+{
+  "name": "locknchat-client",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LockNChat browser client: plain HTML/CSS/JS, no build step",
+  "scripts": {
+    "test": "node --test test/"
+  }
+}
