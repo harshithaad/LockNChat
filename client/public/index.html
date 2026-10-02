@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LockNChat: end-to-end encrypted real-time messaging">
+  <title>LockNChat</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <span class="appname">🔒 LockNChat</span>
+    <div id="nav-user" class="nav-user" hidden>
+      <span id="connection" class="connection offline" title="Real-time connection">Offline</span>
+      <span id="nav-username" class="nav-username"></span>
+      <button id="logout-btn" type="button">Log out</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Login / register -->
+    <section id="auth-view" class="auth-view" hidden>
+      <form id="auth-form" class="auth-card" novalidate>
+        <h1>Welcome to LockNChat</h1>
+        <p class="subtitle">End-to-end encrypted messaging</p>
+
+        <label for="username">Username</label>
+        <input id="username" name="username" autocomplete="username" maxlength="32" spellcheck="false" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" maxlength="256" required>
+
+        <ul id="password-rules" class="password-rules" hidden></ul>
+        <p id="auth-status" class="status" role="status" aria-live="polite"></p>
+
+        <div class="auth-buttons">
+          <button type="submit" data-action="login">Log in</button>
+          <button type="submit" data-action="register" class="secondary">Register</button>
+        </div>
+
+        <p class="hint">
+          Your password never leaves this device. It is used locally to derive your
+          login key and to unlock your private encryption key.
+        </p>
+      </form>
+    </section>
+
+    <!-- Chat -->
+    <section id="chat-view" class="chat-view" hidden>
+      <aside class="sidebar">
+        <input id="search" class="search" type="search" placeholder="Search users…" maxlength="32" autocomplete="off" spellcheck="false" aria-label="Search users">
+        <ul id="search-results" class="search-results"></ul>
+        <h2 class="sidebar-title">Chats</h2>
+        <ul id="conversation-list" class="conversation-list"></ul>
+      </aside>
+
+      <section class="conversation">
+        <div id="empty-state" class="empty-state">
+          <p>Select a chat or search for someone to start messaging.</p>
+        </div>
+
+        <div id="conversation-pane" class="conversation-pane" hidden>
+          <header class="conversation-header">
+            <button id="back-btn" class="back-btn" type="button" aria-label="Back to chats">←</button>
+            <span id="peer-name" class="peer-name"></span>
+            <span class="badge">🔒 End-to-end encrypted</span>
+          </header>
+
+          <div id="key-warning" class="key-warning" role="alert" hidden>
+            <p>
+              <strong>Security warning:</strong> this contact's encryption key has changed since you
+              last talked. This happens if they re-registered, or if someone is intercepting the
+              conversation. Compare the new safety number with them before continuing.
+            </p>
+            <button id="trust-key-btn" type="button">I verified the new safety number</button>
+          </div>
+
+          <ol id="messages" class="messages" aria-live="polite"></ol>
+
+          <form id="composer" class="composer">
+            <input id="message-input" maxlength="2000" autocomplete="off" placeholder="Type a message" aria-label="Message">
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <aside class="encryption-panel">
+        <h2>Encryption</h2>
+        <p>
+          Messages are encrypted on your device with <strong>AES-256-GCM</strong> using a key
+          derived from an <strong>ECDH P-256</strong> exchange. The server only relays and
+          stores ciphertext and cannot read your messages.
+        </p>
+
+        <div id="safety" class="safety" hidden>
+          <h3>Safety number</h3>
+          <p id="safety-number" class="safety-number"></p>
+          <p class="hint">
+            Compare this number with your contact in person or on a call. If it matches on both
+            devices, nobody is intercepting your conversation.
+          </p>
+        </div>
+
+        <details id="server-view" class="server-view">
+          <summary>What the server sees</summary>
+          <pre id="last-ciphertext">Send or receive a message to see its encrypted form.</pre>
+        </details>
+      </aside>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="alert" hidden></div>
+
+  <script src="/socket.io/socket.io.min.js"></script>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
